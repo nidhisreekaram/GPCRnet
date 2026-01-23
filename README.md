@@ -1,6 +1,6 @@
-🧬GPCRnet Framework 
+# 🧬GPCRnet Framework 
 
-1️⃣ Datasets/
+## 1️⃣ Datasets/
 
 This directory contains all dataset files used for model training and validation.
 Each dataset is stored as serialized .pkl (pickle) objects for efficient loading and experimentation.
@@ -11,7 +11,7 @@ Hard Split/ — Datasets divided ensuring zero overlap between training and test
 
 Random Split/ — Datasets divided randomly for baseline model benchmarking.
 
-2️⃣ Models/
+## 2️⃣ Models/
 
 This directory contains the pre-trained models and grad cam programs.
 
