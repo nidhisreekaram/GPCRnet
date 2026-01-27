@@ -1,4 +1,4 @@
-# 🧬GPCRnet: Interpretable Deep Learning Model to Classify Functional States and to Identify Functional Motifs of different GPCR Classes
+#GPCRnet: Interpretable Deep Learning Model to Classify Functional States and to Identify Functional Motifs of different GPCR Classes
 
 This repository provides datasets and codes for GPCR functional state classification using Graph Neural Networks (GNNs). The proposed framework integrates residue-level structural information to predict functional states (Active vs Inactive). 
 By incorporating Graph Grad-CAM interpretability adapted for GNNs, enabling residue-level attribution and offering clear insights into the structural and functional motifs and single residues that are important for model's decision. 
