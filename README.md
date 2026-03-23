@@ -1,12 +1,11 @@
 # GPCRnet: Interpretable Deep Learning Model to Classify Functional States and to Identify Functional Motifs of different GPCR Classes
 
-This repository provides datasets and codes for GPCR functional state classification using Graph Neural Networks (GNNs). The proposed framework integrates residue-level structural information to predict functional states (Active vs Inactive). 
-By incorporating Graph Grad-CAM interpretability adapted for GNNs, enabling residue-level attribution and offering clear insights into the structural and functional motifs and single residues that are important for model's decision. 
-To ensure robustness and realistic generalization, model performance is systematically evaluated using both random split and hard split strategies.
+This repository provides datasets and codes for GPCR functional state classification for both datasets Random and Hard Split startegies using Graph Isomorphism Networks (GINs). The integration of residue-level structural information was to predict functional states (Active vs Inactive). 
+By incorporating Graph Grad-CAM interpretability adapted for GINs, enabling residue-level attribution and offering clear insights into the structural and functional motifs and single residues that are important for model's decision. 
 
 ---
 ## Random Split : 
-Graphs are randomly partitioned into training, validation, and test sets to assess overall predictive performance, with potential overlap of structurally similar GPCRs across splits.
+Graphs are randomly partitioned into training and test sets to assess overall predictive performance, with potential overlap of structurally similar GPCRs across splits.
 ## Hard Split : 
 Graphs are separated based on receptor identity or structural similarity, ensuring related GPCRs are confined to a single split, thus providing a stringent evaluation of generalization to unseen receptors.
 
@@ -51,23 +50,23 @@ Three datasets of GPCRs were incorporated : Class A, Class A+B and Class A+B+C.
 
 This directory contains the pre-trained models and grad cam programs.
 
-### reproducing the result for Random Split
+### Random Split
 * Entering /Models/Random Split/
-* run `A.ipynb` to reproduce Class A result
-* run `A+B.ipynb` to reproduce Class A+B result
-* run `A+B+C.ipynb` to reproduce Class A+B+C result
+* run `Class A.py` for Class A result
+* run `Class A+B.py` for Class A+B result
+* run `Class A+B+C.py` for Class A+B+C result
 
-### reproducing the result for Hard Split
+### Hard Split
 * Entering /Models/Hard Split/
-* run `A.ipynb` to reproduce Class A result
-* run `A+B.ipynb` to reproduce Class A+B result
-* run `A+B+C.ipynb` to reproduce Class A+B+C result
+* run `Class A.py` for Class A result
+* run `Class A+B.py` for Class A+B result
+* run `Class A+B+C.py` for Class A+B+C result
 
 Grad-CAM-GPCRnet/ — Grad-CAM analysis applied to GPCRnet model, that provides excels that contain score for each node in the test data.
 
 The Class A+B model trained using a random split demonstrated the highest overall performance and was therefore designated as GPCRnet.
 
-### reproducing the result for Grad-CAM results
+### Grad-CAM Interpretation
 * Entering /Models/Grad-CAM- GPCRnet
 * Load `GPCR_A+B.pkl` as input file for Class A+B
-* run `Graph Grad Cam results.ipynb` to reproduce Grad-CAM results
+* run `Graph Grad Cam results.ipynb` to get Grad-CAM results
