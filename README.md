@@ -13,7 +13,7 @@ Graphs are separated based on receptor identity or structural similarity, ensuri
 
 ## Installation Instructions
 
-The following setup was used to develop and run both ResiNet-GNN and SiteSpec-GNN models.
+The following setup was used to develop and run models.
 
  pip install numpy pandas scikit-learn matplotlib seaborn tqdm
  
