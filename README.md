@@ -69,4 +69,4 @@ The Class A+B model trained using a random split demonstrated the highest overal
 ### Grad-CAM Interpretation
 * Entering /Models/Grad-CAM- GPCRnet
 * Load `GPCR_A+B.pkl` as input file for Class A+B
-* run `Graph Grad Cam results.ipynb` to get Grad-CAM results
+* run `Graph Grad Cam results.py` to get Grad-CAM results
