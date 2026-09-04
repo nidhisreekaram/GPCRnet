@@ -1,20 +1,12 @@
-# 🧬GPCRnet: Interpretable Deep Learning Model to Classify Functional States and to Identify Functional Motifs of different GPCR Classes
+# 🧬GPCRnet: An Interpretable Structure-Based Deep Learning Framework for Functional State Prediction and Motif Discovery Across GPCR Classes
 
-This repository provides datasets and codes for GPCR functional state classification using Graph Neural Networks (GNNs). The proposed framework integrates residue-level structural information to predict functional states (Active vs Inactive). 
-By incorporating Graph Grad-CAM interpretability adapted for GNNs, enabling residue-level attribution and offering clear insights into the structural and functional motifs and single residues that are important for model's decision. 
-To ensure robustness and realistic generalization, model performance is systematically evaluated using both random split and hard split strategies.
-
----
-## Random Split : 
-Graphs are randomly partitioned into training, validation, and test sets to assess overall predictive performance, with potential overlap of structurally similar GPCRs across splits.
-## Hard Split : 
-Graphs are separated based on receptor identity or structural similarity, ensuring related GPCRs are confined to a single split, thus providing a stringent evaluation of generalization to unseen receptors.
+This repository provides datasets and codes for GPCR functional state classification using Graph Isomorphism Networks (GINs). The residue-level structural information was integrated to predict functional states (Active vs Inactive). By incorporating Graph Grad-CAM interpretability adapted for GNNs, enabling residue-level attribution and offering clear insights into the structural and functional motifs/residues that are important for model's decision.
 
 ---
 
 ## Installation Instructions
 
-The following setup was used to develop and run both ResiNet-GNN and SiteSpec-GNN models.
+The following setup was used to develop and run models.
 
  pip install numpy pandas scikit-learn matplotlib seaborn tqdm
  
@@ -26,48 +18,42 @@ The following setup was used to develop and run both ResiNet-GNN and SiteSpec-GN
 
 ## How to load Datasets and run Model codes
 
-## 1️⃣ Datasets/
-Three datasets of GPCRs were incorporated : Class A, Class A+B and Class A+B+C.
+## Datasets/
+This folder contains Three datasets of GPCRs were incorporated : Class A, Class A+B and Class A+B+C.
 
-### Random Split Datasets
-* Entering /Datasets/Random Split
-* Load `GPCR_A.pkl` as input file for Class A
-* Load `GPCR_A+B.pkl` as input file for Class A+B
-* Load `GPCR_A+B+C.pkl` as input file for Class A+B+C
-
-### Hard Split Datasets
-* Entering /Datasets/Hard Split/A
-* Load `Train_A.pkl` and `Test_A.pkl` as input file for Class A
-
-* Entering /Datasets/Hard Split/A+B
-* Load `Train_A+B.pkl` and `Test_A+B.pkl` as input file for Class A+B
-
-* Entering /Datasets/Hard Split/A+B+C
-* Load `Train_A+B+C.pkl` and `Test_A+B+C.pkl` as input file for Class A+B+C
+* Enter/Datasets/
+* The PDB-IDs list was provided in the excel `PDB_List.xlsx`
+* Load `Class A.pkl` as input file for Class A
+* Load `Class A+B.pkl` as input file for Class A+B
+* Load `Class A+B+C.pkl` as input file for Class A+B+C
  
 ---
 
-## 2️⃣ Models/
+## Models/
 
-This directory contains the pre-trained models and grad cam programs.
+This folder contains the models for classification and Graph Grad-CAM for identification of functional motifs.
 
-### reproducing the result for Random Split
-* Entering /Models/Random Split/
-* run `A.ipynb` to reproduce Class A result
-* run `A+B.ipynb` to reproduce Class A+B result
-* run `A+B+C.ipynb` to reproduce Class A+B+C result
+* Enter/Models/
+* run `Model 1.py` to get Class A result
+* run `Model 2.py` to get Class A+B result
+* run `Model 3.py` to get Class A+B+C result
 
-### reproducing the result for Hard Split
-* Entering /Models/Hard Split/
-* run `A.ipynb` to reproduce Class A result
-* run `A+B.ipynb` to reproduce Class A+B result
-* run `A+B+C.ipynb` to reproduce Class A+B+C result
+### Stratified five-Fold Cross Validation (CV)
 
-Grad-CAM-GPCRnet/ — Grad-CAM analysis applied to GPCRnet model, that provides excels that contain score for each node in the test data.
+CV  was performed on all three datasets for further evaluation of model performance. A reference code was provided.
 
-The Class A+B model trained using a random split demonstrated the highest overall performance and was therefore designated as GPCRnet.
+* Enter/Datasets/
+* Load `Class A.pkl`, `Class A+B.pkl` and `Class A+B+C.pkl` as input for CV
+* Enter/Models/
+* run `Cross Validation.py` on three different datasets to get the CV result
 
-### reproducing the result for Grad-CAM results
-* Entering /Models/Grad-CAM- GPCRnet
-* Load `GPCR_A+B.pkl` as input file for Class A+B
-* run `Graph Grad Cam results.ipynb` to reproduce Grad-CAM results
+Model 2 with Class A+B dataset was demonstrated the highest overall performance and designated as GPCRnet.
+
+### Grad-CAM Analysis
+
+Graph Grad-CAM was applied to GPCRnet model, that provides excels that contain score for each node in the test data.
+
+* Enter/Datasets/
+* Load `Class A+B+C.pkl` as input file for Class A+B
+* Enter/Models/
+* run `Graph GradCam Results.py` for Graph Grad-CAM results
