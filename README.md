@@ -42,13 +42,13 @@ GPCRnet/
 ## Loading Input and Models Execution :
 
 ## Datasets/
-This folder contains Three datasets of GPCRs were incorporated : Class A, Class A+B and Class A+B+C.
+This folder contains three pre-processed graph datasets of GPCRs were incorporated : Class A, Class A+B and Class A+B+C in pickle file (.pkl) formats. These pickle files contain the graph representations used as input to the classification models.
 
 * Enter/Datasets/
 * The list of PDB-IDs included in this study were provided in the excel `PDB_List.xlsx`
-* Load `Class A.pkl` as input file for pre-processed graph dataset of Class A
-* Load `Class A+B.pkl` as input file for pre-processed graph dataset of Class A+B
-* Load `Class A+B+C.pkl` as input file for pre-processed graph dataset of Class A+B+C
+* Load `Class A.pkl` as input file of Model 1 that has dataset of Class A
+* Load `Class A+B.pkl` as input file of Model 2 that has dataset of Class A+B
+* Load `Class A+B+C.pkl` as input file of Model 3 that has dataset of Class A+B+C
  
 ---
 
@@ -57,13 +57,13 @@ This folder contains Three datasets of GPCRs were incorporated : Class A, Class 
 This folder contains the models for classification and Graph Grad-CAM for identification of functional motifs.
 
 * Enter/Models/
-* run `Model 1.py` to get Class A result
-* run `Model 2.py` to get Class A+B result
-* run `Model 3.py` to get Class A+B+C result
+* run `Model 1.py` to classify Active vs Inactive for Class A dataset
+* run `Model 2.py` to classify Active vs Inactive for Class A+B dataset 
+* run `Model 3.py` to classify Active vs Inactive for Class A+B+C dataset
 
 ### Stratified five-Fold Cross Validation (CV)
 
-CV  was performed on all three datasets for further evaluation of model performance. A reference code was provided.
+CV  was performed on all three datasets for further evaluation of model performance. A reference code for which CV was provided.
 
 * Enter/Datasets/
 * Load `Class A.pkl`, `Class A+B.pkl` and `Class A+B+C.pkl` as input for CV
