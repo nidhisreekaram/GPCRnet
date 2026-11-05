@@ -54,7 +54,7 @@ This folder contains three pre-processed graph datasets of GPCRs were incorporat
 
 ## Models/
 
-This folder contains the models for classification and Graph Grad-CAM for identification of functional motifs.
+This folder contains the Python scripts used to train and evaluate the GIN-based classification models for functional states (Active vs Inactive) classification. Each script corresponds to a speific dataset.
 
 * Enter/Models/
 * run `Model 1.py` to classify Active vs Inactive for Class A dataset
@@ -63,12 +63,12 @@ This folder contains the models for classification and Graph Grad-CAM for identi
 
 ### Stratified five-Fold Cross Validation (CV)
 
-CV  was performed on all three datasets for further evaluation of model performance. A reference code for which CV was provided.
+A reference code of CV was provided which was used on all three datasets to assess its consistency across different GPCR datasets and for further evaluation of model performance.
 
 * Enter/Datasets/
-* Load `Class A.pkl`, `Class A+B.pkl` and `Class A+B+C.pkl` as input for CV
+* Load `Class A.pkl`, `Class A+B.pkl` and `Class A+B+C.pkl` individually as input for CV 
 * Enter/Models/
-* run `Cross Validation.py` on three different datasets to get the CV result
+* run `Cross Validation.py` separately on three different datasets to obtain CV performance metrics for each model
 
 Model 2 with Class A+B dataset was demonstrated the highest overall performance and designated as GPCRnet.
 
@@ -77,6 +77,9 @@ Model 2 with Class A+B dataset was demonstrated the highest overall performance 
 Graph Grad-CAM was applied to GPCRnet model, that provides excels that contain score for each node in the test data.
 
 * Enter/Datasets/
-* Load `Class A+B+C.pkl` as input file for Class A+B
+* Load `Class A+B.pkl` as input file for Graph GradCAM Results that has dataset of Class A+B
 * Enter/Models/
-* run `Graph GradCam Results.py` for Graph Grad-CAM results
+* run `Graph GradCam Results.py` for Graph Grad-CAM result as excel sheet
+
+This analysis results with a excel sheet contains Graph Grad-CAM attribution scores for individual nodes (residues) in the test graphs.
+
