@@ -17,10 +17,10 @@ The following setup was used to develop and run models.
  pip install torch-geometric
 
 ---
-## Repository Structure
+### Repository Structure
 
+```text
 GPCRnet/
-│
 ├── Datasets/
 │   ├── PDB-List.xlsx
 │   ├── Class A.pkl
@@ -32,6 +32,8 @@ GPCRnet/
     ├── Model A+B.py
     ├── Model A+B+C.py
     └── Graph Grad-CAM Results.py
+```
+---
     
 ## How to load Datasets and run Model codes
 
