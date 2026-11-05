@@ -1,5 +1,7 @@
 # 🧬GPCRnet: An Interpretable Structure-Based Deep Learning Framework for Functional State Prediction and Motif Discovery Across GPCR Classes
 
+##Overview :
+
 This repository provides datasets and codes for GPCR functional state classification using Graph Isomorphism Networks (GINs). The residue-level structural information was integrated to predict functional states (Active vs Inactive). By incorporating Graph Grad-CAM interpretability adapted for GNNs, enabling residue-level attribution and offering clear insights into the structural and functional motifs/residues that are important for model's decision.
 
 ---
@@ -15,7 +17,21 @@ The following setup was used to develop and run models.
  pip install torch-geometric
 
 ---
+## Repository Structure
 
+GPCRnet/
+├── Datasets/
+│   ├── PDB-List.xlsx
+│   ├── Class A.pkl
+│   ├── Class A+B.pkl
+│   └── Class A+B+C.pkl
+│
+└── Models/
+    ├── Model A.py
+    ├── Model A+B.py
+    ├── Model A+B+C.py
+    └── Graph Grad-CAM Results.py
+    
 ## How to load Datasets and run Model codes
 
 ## Datasets/
