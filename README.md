@@ -6,7 +6,9 @@ This repository provides datasets and codes for GPCR functional state classifica
 
 ---
 
-## Installation Instructions
+### Installation Instructions
+
+```text
 
 The following setup was used to develop and run models.
 
@@ -15,6 +17,8 @@ The following setup was used to develop and run models.
  pip install torch torchvision torchaudio
  
  pip install torch-geometric
+
+```
 
 ---
 ### Repository Structure
@@ -35,16 +39,16 @@ GPCRnet/
 ```
 ---
     
-## How to load Datasets and run Model codes
+## Loading Input and Models Execution :
 
 ## Datasets/
 This folder contains Three datasets of GPCRs were incorporated : Class A, Class A+B and Class A+B+C.
 
 * Enter/Datasets/
-* The PDB-IDs list was provided in the excel `PDB_List.xlsx`
-* Load `Class A.pkl` as input file for Class A
-* Load `Class A+B.pkl` as input file for Class A+B
-* Load `Class A+B+C.pkl` as input file for Class A+B+C
+* The list of PDB-IDs included in this study were provided in the excel `PDB_List.xlsx`
+* Load `Class A.pkl` as input file for pre-processed graph dataset of Class A
+* Load `Class A+B.pkl` as input file for pre-processed graph dataset of Class A+B
+* Load `Class A+B+C.pkl` as input file for pre-processed graph dataset of Class A+B+C
  
 ---
 
